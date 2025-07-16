@@ -1,5 +1,5 @@
 [build]
-  # Build command
+  # Build command for React (Create React App)
   command = "npm run build"
   
   # Publish directory (where React builds the static files)
@@ -7,9 +7,6 @@
   
   # Functions directory
   functions = "netlify/functions"
-  
-  # Base directory (root of the project)
-  base = "."
 
 [build.environment]
   # Node version
@@ -20,8 +17,11 @@
   
   # Disable telemetry
   CI = "false"
+  
+  # Disable Next.js plugin for React apps
+  NETLIFY_NEXT_PLUGIN_SKIP = "true"
 
-# Redirects for React Router
+# Redirects for React Router (SPA)
 [[redirects]]
   from = "/*"
   to = "/index.html"
